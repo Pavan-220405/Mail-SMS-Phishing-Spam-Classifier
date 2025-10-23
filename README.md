@@ -1,20 +1,20 @@
-# 📧 Spam-Ham Classification Project
+# 📧 Spam-NotSpam Classification Project
 
-### 🔍 Introduction
-This project focuses on building a **spam classifier** that can accurately distinguish between **spam** and **ham (non-spam)** text messages. The motivation behind this work is to strengthen spam detection systems using a mix of **Machine Learning** and **Deep Learning** approaches.  
+##  Introduction
+This project focuses on building a **spam classifier** that can accurately distinguish between **spam** and **ham (non-spam)** text messages. The motivation behind this work is to strengthen spam detection systems using **Machine Learning** and **Deep Learning** approaches.  
 The pipeline includes comprehensive preprocessing, multiple model evaluations, and an ensemble technique to achieve high accuracy and robustness across datasets.
 
 ---
 
-### 📊 Dataset
+## Dataset
 - **Sources:**
-  - [UCI SMS Spam Collection Dataset](https://archive.ics.uci.edu/ml/datasets/sms+spam+collection)
+  - UCI SMS Spam Collection Dataset
   - An additional **Kaggle spam dataset** was merged to enhance generalization and improve model stability.
 - **Purpose:** Combining multiple datasets ensures the classifier performs well on varied text distributions and spam patterns.
 
 ---
 
-### ⚙️ Preprocessing & Feature Engineering
+## Preprocessing & Feature Engineering
 Text cleaning and preparation were key steps before feeding data into ML and DL models.  
 The preprocessing pipeline included:
 - Removal of **punctuations and numbers** using `re` (Regular Expressions)
@@ -25,9 +25,9 @@ The preprocessing pipeline included:
 
 ---
 
-### 🧠 Models Implemented
+## Models Implemented
 
-#### 🧮 Machine Learning Models
+### Machine Learning Models
 Tested multiple traditional classifiers including:
 - Gaussian Naive Bayes
 - Bernoulli Naive Bayes
@@ -46,7 +46,7 @@ Tested multiple traditional classifiers including:
 
 ---
 
-#### 🤖 Deep Learning Model
+### Deep Learning Model
 A simple yet effective deep learning architecture was implemented using **LSTM** layers:
 
 `Embedding → LSTM → Dense → Output Layer`
@@ -57,22 +57,22 @@ A simple yet effective deep learning architecture was implemented using **LSTM**
 
 ---
 
-### 🧰 Tech Stack
+## Tech Stack
 - **Programming Language:** Python
 - **Libraries & Tools:**
   - `scikit-learn`, `nltk`, `xgboost`, `tensorflow / keras`, `numpy`, `pandas`, `re`, `matplotlib`
-- **Environment:** Jupyter Notebook / Google Colab
+- **Environment:**  Google Colab
 
 ---
 
-### 📈 Evaluation Metrics
+## Evaluation Metrics
 To evaluate performance, the following metrics were used:
 - **Accuracy Score**
 - **Precision Score**
 
 ---
 
-### 🧩 Conclusion
+## Conclusion
 The project successfully demonstrates the effectiveness of both **classical ML** and **neural network-based** approaches in spam detection.
 - The **Voting Classifier** achieved the highest **precision (0.975)**, making it ideal for scenarios where false positives (ham marked as spam) must be minimized.
 - The **LSTM model** captured sequential dependencies in text, slightly improving overall accuracy.
@@ -81,7 +81,6 @@ This end-to-end approach can be extended to **email filtering**, **social media 
 
 ---
 
-### 🚀 Future Enhancements
+## Future Enhancements
 - Integration with a **web API / streamlit app** for real-time spam detection
 - Experimenting with **pretrained embeddings (GloVe / Word2Vec)**
-- Adding **explainability metrics (e.g., SHAP, LIME)** for model interpretability
