@@ -41,8 +41,9 @@ Tested multiple traditional classifiers including:
 **Best-performing models** (MultinomialNB, KNN, SVC, Logistic Regression, RandomForest, XGBoost) were combined using a **Soft Voting Classifier**, leading to excellent overall performance.
 
 **Results (ML):**
-- **Accuracy:** 0.957
-- **Precision:** 0.975
+- **Accuracy:** 0.956
+- **Precision:** 0.957
+- **F1 score** 0.59
 
 ---
 
@@ -54,7 +55,8 @@ A simple yet effective deep learning architecture was implemented using **LSTM**
 **Results (DL):**
 - **Accuracy:** 0.963
 - **Precision:** 0.932
-
+- **F1 score** 0.90
+ 
 ---
 
 ## Tech Stack
@@ -69,14 +71,23 @@ A simple yet effective deep learning architecture was implemented using **LSTM**
 To evaluate performance, the following metrics were used:
 - **Accuracy Score**
 - **Precision Score**
+- **F1 score**
+---
 
+## Observations and Analyis:
+- The **Voting Classifier** achieved the **highest precision (0.957),** making it well-suited for applications where minimizing false positives (ham marked as spam) is crucial.
+- However, its F1 score (0.59) indicates that the model may not be balancing precision and recall effectively — it might be missing some spam messages (lower recall).
+- The LSTM model, on the other hand, achieved a much higher F1 score (0.90), suggesting it captures contextual and sequential patterns better than traditional ML models, thus improving recall and overall balance.
+
+### **Reason for the difference:**
+- Machine Learning models, especially TF-IDF-based ones, treat words as independent features, ignoring word order. This limits their ability to understand subtle linguistic cues.
+- LSTM networks, however, leverage **sequence learning** — capturing **dependencies** between words — which leads to better recall and a higher F1 score, despite slightly lower precision.
 ---
 
 ## Conclusion
-The project successfully demonstrates the effectiveness of both **classical ML** and **neural network-based** approaches in spam detection.
-- The **Voting Classifier** achieved the highest **precision (0.975)**, making it ideal for scenarios where false positives (ham marked as spam) must be minimized.
-- The **LSTM model** captured sequential dependencies in text, slightly improving overall accuracy.
-
+This project successfully demonstrates the complementary strengths of both classical ML and neural network-based approaches in spam detection.
+- The **Voting Classifier** achieved excellent **precision**, ideal for precision-critical applications.
+- The **LSTM** model achieved a superior **F1 score**, making it better for **balanced spam filtering** where both spam detection and ham preservation matter.
 This end-to-end approach can be extended to **email filtering**, **social media moderation**, and other **text classification** domains.
 
 ---
